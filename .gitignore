@@ -1,0 +1,12 @@
+#files
+gulpfile.js
+package.json
+package-lock.json
+
+
+#folders
+/node_modules/
+
+#filenames extensions
+*.txt
+*.psd
