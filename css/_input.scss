@@ -1,6 +1,7 @@
 /*Variables for input*/
 
 $range-height: 27px;
+$range-width: auto;
 $range-track-height: 3px;
 $range-thumb-width: 15px;
 $range-thumb-height: 15px;
@@ -15,14 +16,14 @@ input[type=range] {
     height: $range-height;
     margin: 0;
     -webkit-appearance: none;
-    width: 100%;
+    width: $range-width;
     background: transparent;
   }
 //   input[type=range]:focus {
 //     outline: none;
 //   }
   input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
+    width: $range-width;
     height: $range-track-height;
     cursor: pointer;
     animate: 0.2s;
@@ -47,7 +48,7 @@ input[type=range] {
     background: $range-track-bg;
   }
   input[type=range]::-moz-range-track {
-    width: 100%;
+    width: $range-width;
     height: $range-track-height;
     cursor: pointer;
     animate: 0.2s;
@@ -66,7 +67,7 @@ input[type=range] {
     cursor: pointer;
   }
   input[type=range]::-ms-track {
-    width: 100%;
+    width: $range-width;
     height: $range-track-height;
     cursor: pointer;
     animate: 0.2s;
