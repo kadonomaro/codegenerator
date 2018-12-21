@@ -15,5 +15,12 @@ window.onload = function () {
         });
     });
 
+    var burger = document.querySelector('.header__logo');
+    var nav = document.querySelector('.nav');
+    var content = document.querySelector('.content');
 
+    burger.addEventListener('click', function () {
+        nav.classList.toggle('nav_closed');
+        content.classList.toggle('content_full_size');
+    });
 }

@@ -5,22 +5,28 @@
     right: 0;
     z-index: 8;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 60px;
     margin-left: 250px;
     padding: 10px 20px;
     background-color: $color-footer;
-    box-shadow: 0 -5px 5px rgba($color: #000000, $alpha: 0.3);
+    box-shadow: 0 -3px 5px rgba($color: #000000, $alpha: 0.3);
+    &__logo {
+        margin-right: 20px;
+    }
+    &__social {
+        margin-right: auto;
+    }
     &__copy {
-        
-        max-width: 200px;
+        max-width: 220px;
         padding: 5px;
         font-size: 14px;
+        line-height: 1.2;
         color: #fff;
         background-color: $color-text;
         border: 2px solid #fff;
         border-radius: 5px;
+        box-sizing: border-box;
     }
     &__link {
         color: #fff;

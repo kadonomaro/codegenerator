@@ -9,7 +9,7 @@ html {
 
 .page {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
   color: #303030;
   line-height: 1;
 }
@@ -17,6 +17,12 @@ html {
 .content {
   position: relative;
   padding-left: 250px;
+  -webkit-transition: padding 1s;
+  transition: padding 1s;
+}
+
+.content_full_size {
+  padding-left: 0;
 }
 
 /*Variables for input*/
@@ -123,7 +129,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .block {
   position: relative;
-  width: 200px;
+  min-width: 200px;
   height: 200px;
   padding: 10px;
   border: 2px solid #909090;
@@ -178,6 +184,22 @@ input[type=range]:focus::-ms-fill-upper {
 
 .header__logo {
   margin-right: 20px;
+  overflow: hidden;
+  -webkit-transform: perspective(100px);
+          transform: perspective(100px);
+  cursor: pointer;
+  -webkit-animation: logo-rotate 2s linear paused forwards;
+          animation: logo-rotate 2s linear paused forwards;
+}
+
+.header__logo:hover, .header__logo:focus {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.header__logo:hover, .header__logo:focus + .header__title {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 .header__logo-img {
@@ -185,7 +207,47 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .header__title {
+  font-family: monospace;
   font-size: 24px;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: code 2s steps(14) forwards paused;
+          animation: code 2s steps(14) forwards paused;
+}
+
+@-webkit-keyframes code {
+  to {
+    width: 14ch;
+  }
+}
+
+@keyframes code {
+  to {
+    width: 14ch;
+  }
+}
+
+@-webkit-keyframes logo-rotate {
+  50% {
+    -webkit-transform: perspective(100px) rotateY(30deg);
+            transform: perspective(100px) rotateY(30deg);
+  }
+  100% {
+    -webkit-transform: perspective(100px) rotateY(0);
+            transform: perspective(100px) rotateY(0);
+  }
+}
+
+@keyframes logo-rotate {
+  50% {
+    -webkit-transform: perspective(100px) rotateY(30deg);
+            transform: perspective(100px) rotateY(30deg);
+  }
+  100% {
+    -webkit-transform: perspective(100px) rotateY(0);
+            transform: perspective(100px) rotateY(0);
+  }
 }
 
 .nav {
@@ -197,6 +259,10 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #beef4c;
   -webkit-box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
           box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 .nav__list {
@@ -212,7 +278,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .nav__item:hover {
-  background-color: #9fdb14;
+  background-color: #adeb1d;
 }
 
 .nav__item_active {
@@ -228,6 +294,11 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 16px;
   color: #303030;
   text-decoration: none;
+}
+
+.nav_closed {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .border {
@@ -377,9 +448,6 @@ input[type=range]:focus::-ms-fill-upper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -387,18 +455,29 @@ input[type=range]:focus::-ms-fill-upper {
   margin-left: 250px;
   padding: 10px 20px;
   background-color: #e0834a;
-  -webkit-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.footer__logo {
+  margin-right: 20px;
+}
+
+.footer__social {
+  margin-right: auto;
 }
 
 .footer__copy {
-  max-width: 200px;
+  max-width: 220px;
   padding: 5px;
   font-size: 14px;
+  line-height: 1.2;
   color: #fff;
   background-color: #303030;
   border: 2px solid #fff;
   border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .footer__link {

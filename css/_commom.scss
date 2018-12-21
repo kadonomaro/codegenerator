@@ -14,5 +14,8 @@ html {
 .content {
     position: relative;
     padding-left: 250px;
+    transition: padding 1s;
 }
-
+.content_full_size {
+    padding-left: 0;
+}
