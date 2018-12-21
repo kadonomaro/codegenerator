@@ -1,6 +1,5 @@
 .border {
     height: 100vh;
-    
     padding: 20px;
     background-color: $color-apps;
     &__title {
@@ -14,13 +13,40 @@
     &__settings {
         margin: 10px;
         width: calc(50% - 20px);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            background: url('../build/img/controls.svg');
+        }
     }
     &__preview {
         margin: 10px;
         width: calc(50% - 20px);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            background: url('../build/img/preview.svg');
+        }
     }
     &__code {
         margin: 10px;
         width: calc(50% - 20px);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            background: url('../build/img/file.svg');
+        }
     }
 }
