@@ -1,4 +1,26 @@
 .border {
     height: 100vh;
+    
     padding: 20px;
+    background-color: $color-apps;
+    &__title {
+        margin-top: 80px;
+        margin-bottom: 20px;
+    }
+    &__main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__settings {
+        margin: 10px;
+        width: calc(50% - 20px);
+    }
+    &__preview {
+        margin: 10px;
+        width: calc(50% - 20px);
+    }
+    &__code {
+        margin: 10px;
+        width: calc(50% - 20px);
+    }
 }

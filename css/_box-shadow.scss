@@ -1,4 +1,8 @@
 .box-shadow {
     height: 100vh;
     padding: 20px;
+    background-color: darken($color: $color-apps, $amount: 3%);
+    &__title {
+        margin-top: 80px;
+    }
 }

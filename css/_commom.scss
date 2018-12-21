@@ -2,6 +2,9 @@ h1, h2, h3, h4, h5, h6, ul, form {
     margin: 0;
     padding: 0;
 }
+html {
+    scroll-behavior: smooth;
+}
 .page {
     margin: 0;
     font-family: $font-main;
@@ -9,9 +12,28 @@ h1, h2, h3, h4, h5, h6, ul, form {
 }
 .content {
     position: relative;
-    padding-top: 80px;
+    
     padding-left: 250px;
 }
-.block {
+
+.apps {
     
+}
+.block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid $color-border;
+    border-radius: 5px;
+
+    background-color: #fff;
+    box-sizing: border-box;
+
+    &__title {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color-border;
+
+        
+    }
 }
