@@ -18,9 +18,12 @@ window.onload = function () {
     var burger = document.querySelector('.header__logo');
     var nav = document.querySelector('.nav');
     var content = document.querySelector('.content');
+    var footer = document.querySelector('.footer');
 
     burger.addEventListener('click', function () {
         nav.classList.toggle('nav_closed');
-        content.classList.toggle('content_full_size');
+        content.classList.toggle('content_size_full');
+        footer.classList.toggle('footer_size_full');
     });
+    
 }

@@ -3,6 +3,10 @@ h1, h2, h3, h4, h5, h6, ul, form {
   padding: 0;
 }
 
+img {
+  display: block;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -17,12 +21,19 @@ html {
 .content {
   position: relative;
   padding-left: 250px;
+  background-color: #eaeaea;
   -webkit-transition: padding 1s;
   transition: padding 1s;
 }
 
-.content_full_size {
+.content_size_full {
   padding-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+    padding-left: 0;
+  }
 }
 
 /*Variables for input*/
@@ -137,10 +148,10 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  transition: -webkit-box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  -webkit-transition: width 0.5s, -webkit-box-shadow 0.3s;
+  transition: width 0.5s, -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s, width 0.5s;
+  transition: box-shadow 0.3s, width 0.5s, -webkit-box-shadow 0.3s;
 }
 
 .block::before {
@@ -200,10 +211,6 @@ input[type=range]:focus::-ms-fill-upper {
 .header__logo:hover, .header__logo:focus + .header__title {
   -webkit-animation-play-state: running;
           animation-play-state: running;
-}
-
-.header__logo-img {
-  display: block;
 }
 
 .header__title {
@@ -297,12 +304,12 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .nav_closed {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
 }
 
 .border {
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   background-color: #eaeaea;
 }
@@ -318,6 +325,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0 -10px;
 }
 
 .border__settings {
@@ -347,8 +355,14 @@ input[type=range]:focus::-ms-fill-upper {
   background: url("../build/img/file.svg");
 }
 
+@media screen and (max-width: 767px) {
+  .border__settings, .border__preview, .border__code {
+    width: calc(100% - 20px);
+  }
+}
+
 .box-shadow {
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   background-color: #e2e2e2;
 }
@@ -364,6 +378,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0 -10px;
 }
 
 .box-shadow__settings {
@@ -393,8 +408,14 @@ input[type=range]:focus::-ms-fill-upper {
   background: url("../build/img/file.svg");
 }
 
+@media screen and (max-width: 767px) {
+  .box-shadow__settings, .box-shadow__preview, .box-shadow__code {
+    width: calc(100% - 20px);
+  }
+}
+
 .animation {
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   background-color: #eaeaea;
 }
@@ -410,6 +431,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0 -10px;
 }
 
 .animation__settings {
@@ -439,6 +461,12 @@ input[type=range]:focus::-ms-fill-upper {
   background: url("../build/img/file.svg");
 }
 
+@media screen and (max-width: 767px) {
+  .animation__settings, .animation__preview, .animation__code {
+    width: calc(100% - 20px);
+  }
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -457,10 +485,12 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #e0834a;
   -webkit-box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: margin 1s;
+  transition: margin 1s;
 }
 
 .footer__logo {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .footer__social {
@@ -469,6 +499,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .footer__copy {
   max-width: 220px;
+  margin-left: 10px;
   padding: 5px;
   font-size: 14px;
   line-height: 1.2;
@@ -482,5 +513,19 @@ input[type=range]:focus::-ms-fill-upper {
 
 .footer__link {
   color: #fff;
+}
+
+.footer_size_full {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    margin-left: 0;
+  }
+  .footer__copy {
+    font-size: 10px;
+    line-height: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

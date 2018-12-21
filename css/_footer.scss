@@ -11,14 +11,16 @@
     padding: 10px 20px;
     background-color: $color-footer;
     box-shadow: 0 -3px 5px rgba($color: #000000, $alpha: 0.3);
+    transition: margin 1s;
     &__logo {
-        margin-right: 20px;
+        margin-right: 10px;
     }
     &__social {
         margin-right: auto;
     }
     &__copy {
         max-width: 220px;
+        margin-left: 10px;
         padding: 5px;
         font-size: 14px;
         line-height: 1.2;
@@ -30,5 +32,19 @@
     }
     &__link {
         color: #fff;
+    }
+}
+
+.footer_size_full {
+    margin-left: 0;
+}
+
+@include media($tablet) {
+    .footer {
+        margin-left: 0;
+        &__copy {
+            font-size: 10px;
+            line-height: 1;
+        }
     }
 }

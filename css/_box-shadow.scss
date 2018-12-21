@@ -1,5 +1,5 @@
 .box-shadow {
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
     background-color: darken($color: $color-apps, $amount: 3%);
     &__title {
@@ -9,6 +9,7 @@
     &__main {
         display: flex;
         flex-wrap: wrap;
+        margin: 0 -10px;
     }
     &__settings {
         margin: 10px;
@@ -29,6 +30,14 @@
         width: calc(50% - 20px);
         &::before {
             background: url('../build/img/file.svg');
+        }
+    }
+}
+
+@include media($tablet) {
+    .box-shadow {
+        &__settings, &__preview, &__code {
+            width: calc(100% - 20px);
         }
     }
 }

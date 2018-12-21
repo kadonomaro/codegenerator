@@ -2,6 +2,9 @@ h1, h2, h3, h4, h5, h6, ul, form {
     margin: 0;
     padding: 0;
 }
+img {
+    display: block;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -14,8 +17,16 @@ html {
 .content {
     position: relative;
     padding-left: 250px;
+    background-color: $color-apps;
     transition: padding 1s;
 }
-.content_full_size {
+
+.content_size_full {
     padding-left: 0;
+}
+
+@include media($tablet){
+    .content {
+        padding-left: 0;
+    }
 }
