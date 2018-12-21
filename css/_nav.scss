@@ -13,20 +13,23 @@
     &__item {
         text-align: center;
         list-style: none;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: darken($color: $color-nav, $amount: 15%);
+        }
     }
     &__item_active {
-        background-color: darken($color: $color-nav, $amount: 25%);
-        
+        background-color: $color-nav_active;
+        &:hover {
+            background-color: darken($color: $color-nav_active, $amount: 5%);
+        }
     }
     &__link {
         display: block;
         padding: 16px;
         color: $color-text;
         text-decoration: none;
-        transition: background-color 0.3s;
-        &:hover {
-            background-color: darken($color: $color-nav, $amount: 15%);
-        }
+
     }
 
 }

@@ -9,8 +9,17 @@
     background-color: #fff;
     box-sizing: border-box;
     transition: box-shadow 0.3s;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+    }
 
     &__title {
+        margin-bottom: 10px;
         padding-bottom: 10px;
         border-bottom: 2px solid $color-border;
     }

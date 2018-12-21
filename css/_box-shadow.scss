@@ -4,5 +4,31 @@
     background-color: darken($color: $color-apps, $amount: 3%);
     &__title {
         margin-top: 80px;
+        margin-bottom: 20px;
+    }
+    &__main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__settings {
+        margin: 10px;
+        width: calc(50% - 20px);
+        &::before {
+            background: url('../build/img/controls.svg');
+        }
+    }
+    &__preview {
+        margin: 10px;
+        width: calc(50% - 20px);
+        &::before {
+            background: url('../build/img/preview.svg');
+        }
+    }
+    &__code {
+        margin: 10px;
+        width: calc(50% - 20px);
+        &::before {
+            background: url('../build/img/file.svg');
+        }
     }
 }

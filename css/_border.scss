@@ -14,12 +14,6 @@
         margin: 10px;
         width: calc(50% - 20px);
         &::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            width: 25px;
-            height: 25px;
             background: url('../build/img/controls.svg');
         }
     }
@@ -27,12 +21,6 @@
         margin: 10px;
         width: calc(50% - 20px);
         &::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            width: 25px;
-            height: 25px;
             background: url('../build/img/preview.svg');
         }
     }
@@ -40,12 +28,6 @@
         margin: 10px;
         width: calc(50% - 20px);
         &::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            width: 21px;
-            height: 25px;
             background: url('../build/img/file.svg');
         }
     }

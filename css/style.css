@@ -137,7 +137,17 @@ input[type=range]:focus::-ms-fill-upper {
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
+.block::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+}
+
 .block__title {
+  margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid #909090;
 }
@@ -197,10 +207,20 @@ input[type=range]:focus::-ms-fill-upper {
 .nav__item {
   text-align: center;
   list-style: none;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.nav__item:hover {
+  background-color: #9fdb14;
 }
 
 .nav__item_active {
-  background-color: #7dac0f;
+  background-color: #707070;
+}
+
+.nav__item_active:hover {
+  background-color: #636363;
 }
 
 .nav__link {
@@ -208,12 +228,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 16px;
   color: #303030;
   text-decoration: none;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-
-.nav__link:hover {
-  background-color: #9fdb14;
 }
 
 .border {
@@ -241,12 +255,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .border__settings::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  width: 25px;
-  height: 25px;
   background: url("../build/img/controls.svg");
 }
 
@@ -256,12 +264,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .border__preview::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  width: 25px;
-  height: 25px;
   background: url("../build/img/preview.svg");
 }
 
@@ -271,12 +273,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .border__code::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  width: 21px;
-  height: 25px;
   background: url("../build/img/file.svg");
 }
 
@@ -288,6 +284,42 @@ input[type=range]:focus::-ms-fill-upper {
 
 .box-shadow__title {
   margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.box-shadow__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.box-shadow__settings {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.box-shadow__settings::before {
+  background: url("../build/img/controls.svg");
+}
+
+.box-shadow__preview {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.box-shadow__preview::before {
+  background: url("../build/img/preview.svg");
+}
+
+.box-shadow__code {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.box-shadow__code::before {
+  background: url("../build/img/file.svg");
 }
 
 .animation {
@@ -298,6 +330,42 @@ input[type=range]:focus::-ms-fill-upper {
 
 .animation__title {
   margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.animation__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.animation__settings {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.animation__settings::before {
+  background: url("../build/img/controls.svg");
+}
+
+.animation__preview {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.animation__preview::before {
+  background: url("../build/img/preview.svg");
+}
+
+.animation__code {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.animation__code::before {
+  background: url("../build/img/file.svg");
 }
 
 .footer {
@@ -305,14 +373,35 @@ input[type=range]:focus::-ms-fill-upper {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 10;
-  height: 50px;
+  z-index: 8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  margin-left: 250px;
   padding: 10px 20px;
-  background-color: #7a7a7a;
+  background-color: #e0834a;
+  -webkit-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .footer__copy {
-  font-size: 12px;
-  max-width: 150px;
+  max-width: 200px;
+  padding: 5px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #303030;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.footer__link {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
