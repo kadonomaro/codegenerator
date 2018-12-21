@@ -1,0 +1,27 @@
+.nav {
+    position: fixed;
+    top: 80px;
+    z-index: 9;
+    width: 250px;
+    height: 100vh;
+    background-color: $color-nav;
+    box-shadow: 5px 0 5px rgba($color: #000000, $alpha: 0.3);
+    &__list {
+        margin: 0;
+        padding: 0;
+    }
+    &__item {
+        text-align: center;
+        list-style: none;
+    }
+    &__link {
+        display: block;
+        padding: 16px;
+        color: $color-text;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: darken($color: $color-nav, $amount: 15%);
+        }
+    }
+}
