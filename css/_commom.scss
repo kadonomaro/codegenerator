@@ -12,26 +12,6 @@ html {
 }
 .content {
     position: relative;
-    
     padding-left: 250px;
 }
 
-.apps {
-    
-}
-.block {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-    border: 2px solid $color-border;
-    border-radius: 5px;
-
-    background-color: #fff;
-    box-sizing: border-box;
-
-    &__title {
-        padding-bottom: 10px;
-        border-bottom: 2px solid $color-border;
-    }
-}

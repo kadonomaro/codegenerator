@@ -18,23 +18,6 @@ html {
   padding-left: 250px;
 }
 
-.block {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  padding: 10px;
-  border: 2px solid #909090;
-  border-radius: 5px;
-  background-color: #fff;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.block__title {
-  padding-bottom: 10px;
-  border-bottom: 2px solid #909090;
-}
-
 /*Variables for input*/
 input[type=range] {
   height: 27px;
@@ -137,6 +120,23 @@ input[type=range]:focus::-ms-fill-upper {
   background: #2497E3;
 }
 
+.block {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border: 2px solid #909090;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.block__title {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #909090;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -187,6 +187,10 @@ input[type=range]:focus::-ms-fill-upper {
 .nav__item {
   text-align: center;
   list-style: none;
+}
+
+.nav__item_active {
+  background-color: #7dac0f;
 }
 
 .nav__link {
