@@ -14,9 +14,9 @@ $range-thumb-bg: $color-apps;
 
 input[type=range] {
     height: $range-height;
-    margin: 0;
+    // margin: 0;
     -webkit-appearance: none;
-    width: $range-width;
+    // width: $range-width;
     background: transparent;
   }
 //   input[type=range]:focus {
