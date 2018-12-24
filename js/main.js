@@ -1,5 +1,5 @@
 window.onload = function () {
-
+    // выделение активного пункта меню
     var navItem = document.querySelectorAll('.nav__item');
 
     navItem.forEach(function (link) {
@@ -15,6 +15,7 @@ window.onload = function () {
         });
     });
 
+    // открытие/закрытие бокового меню
     var burger = document.querySelector('.header__logo');
     var nav = document.querySelector('.nav');
     var content = document.querySelector('.content');
@@ -26,15 +27,43 @@ window.onload = function () {
         footer.classList.toggle('footer_size_full');
     });
 
+    // изменения стиля элемента "preview" с помощью range слайдера
+    var target = document.querySelector('.preview-border__target');
+    var allCorners = document.querySelector('.settings-border__border-all-slider');
 
-    var file = document.querySelector('.file');
-    var borderCode = document.querySelector('.border__code');
 
-    console.dir(file);
+    var allCount = document.querySelector('.settings-border__border-all-count');
 
-    file.addEventListener('change', function () {
-        borderCode.style.background = `url('${file.files[0].name}')`;
-        console.log(`url('${file.webkitRelativePath}')`);
+
+    allCorners.addEventListener('input', function () {
+        allCount.value = allCorners.value + 'px';
+        target.style.borderRadius = `${allCount.value}`;
     });
+
+    allCorners.addEventListener('input', changeCorner(allCorners, allCount, target));
+    
+
+    function changeCorner(slider, counter, target) {
+        counter.value = slider.value + 'px';
+        target.style.borderRadius = `${counter.value}`;
+
+
+    }
     
 }
+
+
+
+
+
+
+
+    // var file = document.querySelector('.file');
+    // var borderCode = document.querySelector('.border__code');
+
+    // console.dir(file);
+
+    // file.addEventListener('change', function () {
+    //     borderCode.style.background = `url('${file.files[0].name}')`;
+    //     console.log(`url('${file.webkitRelativePath}')`);
+    // });

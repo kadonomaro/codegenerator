@@ -40,32 +40,49 @@
                     <h3 class="block__title">Settings</h3>
 
                     <form action="" class="settings-border">
-                        <input type="range" name="border-all" class="settings-border__border-all-slider" value="0" min="0" max="100">
-                        <input type="text" name="border-all-count" class="settings-border__border-all-count">
+                        <label class="settings-border__label">
+                            <span class="settings-border__title">All corners</span>
+                            <input type="range" name="border-all" class="settings-border__border-all-slider settings-border__border-slider" value="0" min="0" max="100">
+                            <input type="text" name="border-all-count" class="settings-border__border-all-count settings-border__border-count">
+                        </label>
 
-                        <input type="range" name="border-all" class="settings-border__border-all-slider" value="0" min="0" max="100">
-                        <input type="text" name="border-all-count" class="settings-border__border-all-count">
+                        <label class="settings-border__label">
+                            <span class="settings-border__title">Top left corner</span>
+                            <input type="range" name="border-top-left" class="settings-border__border-top-left-slider settings-border__border-slider" value="0" min="0" max="100">
+                            <input type="text" name="border-top-left-count" class="settings-border__border-top-left-count settings-border__border-count">
+                        </label>
 
-                        <input type="range" name="border-all" class="settings-border__border-all-slider" value="0" min="0" max="100">
-                        <input type="text" name="border-all-count" class="settings-border__border-all-count">
+                        <label class="settings-border__label">
+                            <span class="settings-border__title">Top right corner</span>
+                            <input type="range" name="border-top-right" class="settings-border__border-top-right-slider settings-border__border-slider" value="0" min="0" max="100">
+                            <input type="text" name="border-top-right-count" class="settings-border__border-top-right-count settings-border__border-count">
+                        </label>
 
-                        <input type="range" name="border-all" class="settings-border__border-all-slider" value="0" min="0" max="100">
-                        <input type="text" name="border-all-count" class="settings-border__border-all-count">
+                        <label class="settings-border__label">
+                            <span class="settings-border__title">Bottom left corner</span>
+                            <input type="range" name="border-bottom-left" class="settings-border__border-bottom-left-slider settings-border__border-slider" value="0" min="0" max="100">
+                            <input type="text" name="border-bottom-left-count" class="settings-border__border-bottom-left-count settings-border__border-count">
+                        </label>
 
-                        <input type="range" name="border-all" class="settings-border__border-all-slider" value="0" min="0" max="100">
-                        <input type="text" name="border-all-count" class="settings-border__border-all-count">
+                        <label class="settings-border__label">
+                            <span class="settings-border__title">Bottom right corner</span>
+                            <input type="range" name="border-bottom-right" class="settings-border__border-bottom-right-slider settings-border__border-slider" value="0" min="0" max="100">
+                            <input type="text" name="border-bottom-right-count" class="settings-border__border-bottom-right-count settings-border__border-count">
+                        </label>
                     </form>
-
                 </div>
+
                 <div class="border__preview block" tabindex="0">
                     <h3 class="block__title">Preview</h3>
                     <div class="preview-border">
-                        <div class="preview-border__target">target</div>
+                        <div class="preview-border__target"></div>
                     </div>
                 </div>
+
                 <div class="border__code block" tabindex="0">
                     <h3 class="block__title">Code</h3>
-                    <input type="file" name="" id="" class="file">
+                    <!-- <input type="file" name="" id="" class="file"> -->
+                    <textarea class="code-border" name="code-border" cols="30" rows="10" readonly></textarea>
                 </div>
             </div>
 
