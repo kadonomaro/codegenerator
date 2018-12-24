@@ -384,6 +384,11 @@ input[type=range]:focus::-ms-fill-upper {
           box-sizing: border-box;
 }
 
+.preview-border__target {
+  border: 1px solid #303030;
+  padding-bottom: 50%;
+}
+
 .box-shadow {
   min-height: 100vh;
   padding: 20px;
