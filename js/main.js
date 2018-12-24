@@ -29,26 +29,58 @@ window.onload = function () {
 
     // изменения стиля элемента "preview" с помощью range слайдера
     var target = document.querySelector('.preview-border__target');
-    var allCorners = document.querySelector('.settings-border__border-all-slider');
+    var codeBorder = document.querySelector('.code-border');
+    var codeCopyButton = document.querySelector('.code-border__copy');
 
+    var allCorners = document.querySelector('.settings-border__border-all-slider');
+    var topLeftCorner = document.querySelector('.settings-border__border-top-left-slider');
+    var topRightCorner = document.querySelector('.settings-border__border-top-right-slider');
+    var bottomLeftCorner = document.querySelector('.settings-border__border-bottom-left-slider');
+    var bottomRightCorner = document.querySelector('.settings-border__border-bottom-right-slider');
 
     var allCount = document.querySelector('.settings-border__border-all-count');
+    var topLeftCount = document.querySelector('.settings-border__border-top-left-count');
+    var topRightCount = document.querySelector('.settings-border__border-top-right-count');
+    var bottomLeftCount = document.querySelector('.settings-border__border-bottom-left-count');
+    var bottomRightCount = document.querySelector('.settings-border__border-bottom-right-count');
 
 
     allCorners.addEventListener('input', function () {
         allCount.value = allCorners.value + 'px';
         target.style.borderRadius = `${allCount.value}`;
+        codeBorder.value = target.style.cssText;
     });
 
-    allCorners.addEventListener('input', changeCorner(allCorners, allCount, target));
+    topLeftCorner.addEventListener('input', function () {
+        topLeftCount.value = topLeftCorner.value + 'px';
+        target.style.borderTopLeftRadius = `${topLeftCount.value}`
+        codeBorder.value = target.style.cssText;
+    });
+
+    topRightCorner.addEventListener('input', function () {
+        topRightCount.value = topRightCorner.value + 'px';
+        target.style.borderTopRightRadius = `${topRightCount.value}`
+        codeBorder.value = target.style.cssText;
+    });
     
+    bottomLeftCorner.addEventListener('input', function () {
+        bottomLeftCount.value = bottomLeftCorner.value + 'px';
+        target.style.borderBottomLeftRadius = `${bottomLeftCount.value}`
+        codeBorder.value = target.style.cssText;
+    });
 
-    function changeCorner(slider, counter, target) {
-        counter.value = slider.value + 'px';
-        target.style.borderRadius = `${counter.value}`;
+    bottomRightCorner.addEventListener('input', function () {
+        bottomRightCount.value = bottomRightCorner.value + 'px';
+        target.style.borderBottomRightRadius = `${bottomRightCount.value}`
+        codeBorder.value = target.style.cssText;
+    });
 
-
-    }
+    codeCopyButton.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        codeBorder.select();
+        document.execCommand('copy');
+    })
+   
     
 }
 
