@@ -106,6 +106,7 @@ window.onload = function () {
     var codeCopyButtonShadow = document.querySelector('.code-shadow__copy');
     var insetCheckbox = document.querySelector('.settings-shadow__inset');
     var inset = false;
+    var insetText = "";
 
     var shiftXSlider = document.querySelector('.settings-shadow__shift-x-slider');
     var shiftYSlider = document.querySelector('.settings-shadow__shift-y-slider');
@@ -119,39 +120,41 @@ window.onload = function () {
 
     shiftXSlider.addEventListener('input', function () {
         shiftXCount.value = shiftXSlider.value + "px";
-        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
         codeShadow.value = targetShadow.style.cssText;
     });
     
     shiftYSlider.addEventListener('input', function () {
         shiftYCount.value = shiftYSlider.value + "px";
-        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
         codeShadow.value = targetShadow.style.cssText;
     });
     
     shiftBlurSlider.addEventListener('input', function () {
         shiftBlurCount.value = shiftBlurSlider.value + "px";
-        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
         codeShadow.value = targetShadow.style.cssText;
     });
 
     shiftSpreadSlider.addEventListener('input', function () {
         shiftSpreadCount.value = shiftSpreadSlider.value + "px";
-        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
         codeShadow.value = targetShadow.style.cssText;
     });
 
     insetCheckbox.addEventListener('click', function () {
         inset = !inset;
-        insetCheckbox.classList.toggle('settings-shadow__inset_checked');
         if (inset) {
-            targetShadow.style.boxShadow = `inset ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+            insetText = "inset";
         } else {
-            targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+            insetText = "";
         }
+
+        insetCheckbox.classList.toggle('settings-shadow__inset_checked');
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
         codeShadow.value = targetShadow.style.cssText;
 
-        console.log(inset);
+        console.log(insetText);
     });
 
     codeCopyButtonShadow.addEventListener('click', function (evt) {
