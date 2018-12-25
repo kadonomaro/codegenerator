@@ -569,6 +569,19 @@ input[type=range]:focus::-ms-fill-upper {
           box-sizing: border-box;
 }
 
+.settings-shadow__inset {
+  margin: 5px;
+  padding: 6px 12px;
+  border: 1px solid #909090;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.settings-shadow__inset_checked {
+  background-color: #beef4c;
+}
+
 .preview-shadow {
   display: -webkit-box;
   display: -ms-flexbox;
