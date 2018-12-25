@@ -87,7 +87,6 @@
 
                 <div class="border__code block" tabindex="0">
                     <h3 class="block__title">Code</h3>
-                    <!-- <input type="file" name="" id="" class="file"> -->
                     <textarea class="code-border code" name="code-border" cols="30" rows="10" readonly></textarea>
                     <button class="code-border__copy button">Copy</button>
                 </div>
@@ -101,12 +100,44 @@
             <h2 class="shadow__title">Box-shadow</h2>
 
             <div class="shadow__main">
+
                 <div class="shadow__settings block" tabindex="0">
                     <h3 class="block__title">Settings</h3>
+
+                    <form action="" class="settings-shadow">
+                        <label class="settings-shadow__label">
+                            <span class="settings-shadow__title">Shift X</span>
+                            <input type="range" name="shift-x" class="settings-shadow__shift-x-slider settings-shadow__shadow-slider" value="0" min="-20" max="20">
+                            <input type="text" name="shift-x-count" class="settings-shadow__shift-x-count settings-shadow__shadow-count">
+                        </label>
+
+                        <label class="settings-shadow__label">
+                            <span class="settings-shadow__title">Shift Y</span>
+                            <input type="range" name="shift-y" class="settings-shadow__shift-y-slider settings-shadow__shadow-slider" value="0" min="-20" max="20">
+                            <input type="text" name="shift-y-count" class="settings-shadow__shift-y-count settings-shadow__shadow-count">
+                        </label>
+
+                        <label class="settings-shadow__label">
+                            <span class="settings-shadow__title">Blur</span>
+                            <input type="range" name="blur" class="settings-shadow__blur-slider settings-shadow__shadow-slider" value="0" min="-20" max="20">
+                            <input type="text" name="blur-count" class="settings-shadow__blur-count settings-shadow__shadow-count">
+                        </label>
+
+                        <label class="settings-shadow__label">
+                            <span class="settings-shadow__title">Spread</span>
+                            <input type="range" name="spread" class="settings-shadow__spread-slider settings-shadow__shadow-slider" value="0" min="-20" max="20">
+                            <input type="text" name="spread-count" class="settings-shadow__spread-count settings-shadow__shadow-count">
+                        </label>
+
+                    </form>
+
                 </div>
 
                 <div class="shadow__preview block" tabindex="0">
                     <h3 class="block__title">Preview</h3>
+                    <div class="preview-shadow">
+                        <div class="preview-shadow__target"></div>
+                    </div>
                 </div>
 
                 <div class="shadow__code block" tabindex="0">

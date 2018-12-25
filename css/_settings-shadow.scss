@@ -1,4 +1,4 @@
-.settings-border {
+.settings-shadow {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -5px;
@@ -13,12 +13,12 @@
         margin-left: 5px;
     }
 
-    &__border-slider {
+    &__shadow-slider {
         margin: 5px;
         margin-right: auto;
         width: calc(80% - 10px);
     }
-    &__border-count{
+    &__shadow-count{
         margin: 5px;
         padding: 5px;
         max-width: calc(20% - 10px);

@@ -45,7 +45,7 @@ window.onload = function () {
     var bottomLeftCount = document.querySelector('.settings-border__border-bottom-left-count');
     var bottomRightCount = document.querySelector('.settings-border__border-bottom-right-count');
     var borderWidthCount = document.querySelector('.settings-border__border-width-count');
-    var textArea = document.getElementsByTagName('textarea');
+
     
     allCorners.addEventListener('input', function () {
         allCount.value = allCorners.value + 'px';
@@ -99,6 +99,43 @@ window.onload = function () {
     function codeReplace(string) {
         string.value = string.value.replace(/;\s/g, ";\n");
     }
+
+
+    //изменения стиля box-shadow 
+    var targetShadow = document.querySelector('.preview-shadow__target');
+    var codeShadow = document.querySelector('.code-shadow');
+    var codeCopyButtonShadow = document.querySelector('.code-shadow__copy');
+
+    var shiftXSlider = document.querySelector('.settings-shadow__shift-x-slider');
+    var shiftYSlider = document.querySelector('.settings-shadow__shift-y-slider');
+    var shiftBlurSlider = document.querySelector('.settings-shadow__blur-slider');
+    var shiftSpreadSlider = document.querySelector('.settings-shadow__spread-slider');
+
+    var shiftXCount = document.querySelector('.settings-shadow__shift-x-count');
+    var shiftYCount = document.querySelector('.settings-shadow__shift-y-count');
+    var shiftBlurCount = document.querySelector('.settings-shadow__blur-count');
+    var shiftSpreadCount = document.querySelector('.settings-shadow__spread-count');
+
+    shiftXSlider.addEventListener('input', function () {
+        shiftXCount.value = shiftXSlider.value + "px";
+        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+    });
+    
+    shiftYSlider.addEventListener('input', function () {
+        shiftYCount.value = shiftYSlider.value + "px";
+        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+    });
+    
+    shiftBlurSlider.addEventListener('input', function () {
+        shiftBlurCount.value = shiftBlurSlider.value + "px";
+        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+    });
+
+    shiftSpreadSlider.addEventListener('input', function () {
+        shiftSpreadCount.value = shiftSpreadSlider.value + "px";
+        targetShadow.style.boxShadow = `${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+    });
+
 
 
 }
