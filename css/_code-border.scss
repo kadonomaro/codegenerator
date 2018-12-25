@@ -2,6 +2,11 @@
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
+    line-height: 1.5em;
+    background-color: $color-apps;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 50%, transparent 0);
+    background-size: auto 3em;
+    background-origin: content-box;
     border: 1px solid $color-border;
     resize: none;
     box-sizing: border-box;
@@ -10,6 +15,7 @@
         padding: 4px 12px;
         font-family: inherit;
         font-size: 18px;
+        color: inherit;
         background-color: $color-header;
         border: 1px solid $color-border;
         transition: all 0.3s;
