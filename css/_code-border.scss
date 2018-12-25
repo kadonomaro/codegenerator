@@ -12,7 +12,6 @@
         font-size: 18px;
         background-color: $color-header;
         border: 1px solid $color-border;
-        border-radius: 3px;
         transition: all 0.3s;
         &:hover, &:focus {
             background-color: lighten($color: $color-header, $amount: 10%);

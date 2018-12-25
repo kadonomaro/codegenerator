@@ -42,6 +42,7 @@
 @include media($tablet) {
     .footer {
         margin-left: 0;
+        padding-left: 20px;
         &__copy {
             font-size: 10px;
             line-height: 1;

@@ -37,51 +37,71 @@ window.onload = function () {
     var topRightCorner = document.querySelector('.settings-border__border-top-right-slider');
     var bottomLeftCorner = document.querySelector('.settings-border__border-bottom-left-slider');
     var bottomRightCorner = document.querySelector('.settings-border__border-bottom-right-slider');
+    var borderWidth = document.querySelector('.settings-border__border-width-slider');
 
     var allCount = document.querySelector('.settings-border__border-all-count');
     var topLeftCount = document.querySelector('.settings-border__border-top-left-count');
     var topRightCount = document.querySelector('.settings-border__border-top-right-count');
     var bottomLeftCount = document.querySelector('.settings-border__border-bottom-left-count');
     var bottomRightCount = document.querySelector('.settings-border__border-bottom-right-count');
-
-
+    var borderWidthCount = document.querySelector('.settings-border__border-width-count');
+    var textArea = document.getElementsByTagName('textarea');
+    
     allCorners.addEventListener('input', function () {
         allCount.value = allCorners.value + 'px';
         target.style.borderRadius = `${allCount.value}`;
         codeBorder.value = target.style.cssText;
+        codeReplace();
     });
 
     topLeftCorner.addEventListener('input', function () {
         topLeftCount.value = topLeftCorner.value + 'px';
-        target.style.borderTopLeftRadius = `${topLeftCount.value}`
+        target.style.borderTopLeftRadius = `${topLeftCount.value}`;
         codeBorder.value = target.style.cssText;
+        codeReplace();
     });
 
     topRightCorner.addEventListener('input', function () {
         topRightCount.value = topRightCorner.value + 'px';
-        target.style.borderTopRightRadius = `${topRightCount.value}`
+        target.style.borderTopRightRadius = `${topRightCount.value}`;
         codeBorder.value = target.style.cssText;
+        codeReplace();
     });
     
     bottomLeftCorner.addEventListener('input', function () {
         bottomLeftCount.value = bottomLeftCorner.value + 'px';
-        target.style.borderBottomLeftRadius = `${bottomLeftCount.value}`
+        target.style.borderBottomLeftRadius = `${bottomLeftCount.value}`;
         codeBorder.value = target.style.cssText;
+        codeReplace();
     });
 
     bottomRightCorner.addEventListener('input', function () {
         bottomRightCount.value = bottomRightCorner.value + 'px';
-        target.style.borderBottomRightRadius = `${bottomRightCount.value}`
+        target.style.borderBottomRightRadius = `${bottomRightCount.value}`;
         codeBorder.value = target.style.cssText;
+        codeReplace();
+    });
+
+    borderWidth.addEventListener('input', function () {
+        borderWidthCount.value = borderWidth.value + 'px';
+        target.style.borderWidth = `${borderWidth.value}px`;
+        codeBorder.value = target.style.cssText;
+        codeReplace();
     });
 
     codeCopyButton.addEventListener('click', function (evt) {
         evt.preventDefault();
         codeBorder.select();
         document.execCommand('copy');
-    })
+        
+    });
    
-    
+    function codeReplace() {
+        codeBorder.value = codeBorder.value.replace(/;\s/g, ";");
+        codeBorder.value = codeBorder.value.replace(/;/g, ";\n");
+    }
+
+
 }
 
 

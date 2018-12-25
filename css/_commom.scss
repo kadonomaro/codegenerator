@@ -6,6 +6,7 @@ img {
     display: block;
 }
 html {
+    
     scroll-behavior: smooth;
 }
 .page {
@@ -13,6 +14,7 @@ html {
     font-family: $font-main;
     color: $color-text;
     line-height: 1;
+    
     
 }
 .content {
@@ -29,5 +31,25 @@ html {
 @include media($tablet){
     .content {
         padding-left: 0;
+    }
+}
+
+.pixel {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 50;
+    
+    background-color: $color-apps;
+    border: 1px solid $color-border;
+    &__head {
+        margin-bottom: 10px;
+        padding: 10px;
+        font-weight: bold;
+        border-bottom: 1px solid $color-border;
+        cursor: move;
+    }
+    &__body {
+        padding: 10px;
     }
 }
