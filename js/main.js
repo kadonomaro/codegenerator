@@ -51,42 +51,42 @@ window.onload = function () {
         allCount.value = allCorners.value + 'px';
         target.style.borderRadius = `${allCount.value}`;
         codeBorder.value = target.style.cssText;
-        codeReplace();
+        codeReplace(codeBorder);
     });
 
     topLeftCorner.addEventListener('input', function () {
         topLeftCount.value = topLeftCorner.value + 'px';
         target.style.borderTopLeftRadius = `${topLeftCount.value}`;
         codeBorder.value = target.style.cssText;
-        codeReplace();
+        codeReplace(codeBorder);
     });
 
     topRightCorner.addEventListener('input', function () {
         topRightCount.value = topRightCorner.value + 'px';
         target.style.borderTopRightRadius = `${topRightCount.value}`;
         codeBorder.value = target.style.cssText;
-        codeReplace();
+        codeReplace(codeBorder);
     });
     
     bottomLeftCorner.addEventListener('input', function () {
         bottomLeftCount.value = bottomLeftCorner.value + 'px';
         target.style.borderBottomLeftRadius = `${bottomLeftCount.value}`;
         codeBorder.value = target.style.cssText;
-        codeReplace();
+        codeReplace(codeBorder);
     });
 
     bottomRightCorner.addEventListener('input', function () {
         bottomRightCount.value = bottomRightCorner.value + 'px';
         target.style.borderBottomRightRadius = `${bottomRightCount.value}`;
         codeBorder.value = target.style.cssText;
-        codeReplace();
+        codeReplace(codeBorder);
     });
 
     borderWidth.addEventListener('input', function () {
         borderWidthCount.value = borderWidth.value + 'px';
         target.style.borderWidth = `${borderWidth.value}px`;
         codeBorder.value = target.style.cssText;
-        codeReplace();
+        codeReplace(codeBorder);
     });
 
     codeCopyButton.addEventListener('click', function (evt) {
@@ -96,9 +96,8 @@ window.onload = function () {
         
     });
    
-    function codeReplace() {
-        codeBorder.value = codeBorder.value.replace(/;\s/g, ";");
-        codeBorder.value = codeBorder.value.replace(/;/g, ";\n");
+    function codeReplace(string) {
+        string.value = string.value.replace(/;\s/g, ";\n");
     }
 
 

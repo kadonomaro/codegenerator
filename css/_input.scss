@@ -48,7 +48,7 @@ input[type=range] {
     background: $range-track-bg;
   }
   input[type=range]::-moz-range-track {
-    width: $range-width;
+    // width: $range-width;
     height: $range-track-height;
     cursor: pointer;
     animate: 0.2s;

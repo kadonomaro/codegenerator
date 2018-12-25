@@ -1,0 +1,11 @@
+.code {
+    padding: 10px;
+    line-height: 1.5em;
+    background-color: $color-apps;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 50%, transparent 0);
+    background-size: auto 3em;
+    background-origin: content-box;
+    border: 1px solid $color-border;
+    resize: none;
+    box-sizing: border-box;
+}

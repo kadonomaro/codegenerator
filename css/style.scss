@@ -1,8 +1,11 @@
 @import 'variables';
 @import 'mixins';
 @import 'commom';
+
 @import 'input';
 @import 'block';
+@import 'code';
+@import 'button';
 
 @import 'header';
 @import 'nav';
@@ -12,7 +15,11 @@
 @import 'preview-border';
 @import 'code-border';
 
-@import 'box-shadow';
+@import 'shadow';
+
+
 @import 'animation';
+
+
 
 @import 'footer';

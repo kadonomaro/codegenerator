@@ -1,4 +1,4 @@
-.box-shadow {
+.shadow {
     min-height: 100vh;
     padding: 20px;
     background-color: darken($color: $color-apps, $amount: 3%);
@@ -35,7 +35,7 @@
 }
 
 @include media($tablet) {
-    .box-shadow {
+    .shadow {
         &__settings, &__preview, &__code {
             width: calc(100% - 20px);
         }

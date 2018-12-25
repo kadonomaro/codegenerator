@@ -1,0 +1,12 @@
+.button {
+    padding: 4px 12px;
+    font-family: inherit;
+    font-size: 18px;
+    color: inherit;
+    background-color: $color-header;
+    border: 1px solid $color-border;
+    transition: all 0.3s;
+    &:hover, &:focus {
+        background-color: lighten($color: $color-header, $amount: 10%);
+    }
+}
