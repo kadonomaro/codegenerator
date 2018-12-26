@@ -38,6 +38,7 @@ window.onload = function () {
     var bottomLeftCorner = document.querySelector('.settings-border__border-bottom-left-slider');
     var bottomRightCorner = document.querySelector('.settings-border__border-bottom-right-slider');
     var borderWidth = document.querySelector('.settings-border__border-width-slider');
+    var borderStyle = document.querySelector('.settings-border__border-style');
 
     var allCount = document.querySelector('.settings-border__border-all-count');
     var topLeftCount = document.querySelector('.settings-border__border-top-left-count');
@@ -84,7 +85,14 @@ window.onload = function () {
 
     borderWidth.addEventListener('input', function () {
         borderWidthCount.value = borderWidth.value + 'px';
-        target.style.borderWidth = `${borderWidth.value}px`;
+        // target.style.borderWidth = `${borderWidth.value}px`;
+        target.style.border = `${borderWidth.value}px ${borderStyle.value} black`;
+        codeBorder.value = target.style.cssText;
+        codeReplace(codeBorder);
+    });
+
+    borderStyle.addEventListener('change', function () {
+        target.style.border = `${borderWidth.value}px ${borderStyle.value} black`;
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
@@ -105,6 +113,7 @@ window.onload = function () {
     var codeShadow = document.querySelector('.code-shadow');
     var codeCopyButtonShadow = document.querySelector('.code-shadow__copy');
     var insetCheckbox = document.querySelector('.settings-shadow__inset');
+    
     var inset = false;
     var insetText = "";
 
@@ -112,11 +121,13 @@ window.onload = function () {
     var shiftYSlider = document.querySelector('.settings-shadow__shift-y-slider');
     var shiftBlurSlider = document.querySelector('.settings-shadow__blur-slider');
     var shiftSpreadSlider = document.querySelector('.settings-shadow__spread-slider');
-
+    var opacitySlider = document.querySelector('.settings-shadow__opacity-slider');
+    
     var shiftXCount = document.querySelector('.settings-shadow__shift-x-count');
     var shiftYCount = document.querySelector('.settings-shadow__shift-y-count');
     var shiftBlurCount = document.querySelector('.settings-shadow__blur-count');
     var shiftSpreadCount = document.querySelector('.settings-shadow__spread-count');
+    var opacityCount = document.querySelector('.settings-shadow__opacity-count');
 
     shiftXSlider.addEventListener('input', function () {
         shiftXCount.value = shiftXSlider.value + "px";
@@ -142,8 +153,15 @@ window.onload = function () {
         codeShadow.value = targetShadow.style.cssText;
     });
 
+    opacitySlider.addEventListener('input', function () {
+        opacityCount.value = opacitySlider.value;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
+        codeShadow.value = targetShadow.style.cssText;
+    });
+
     insetCheckbox.addEventListener('click', function () {
         inset = !inset;
+
         if (inset) {
             insetText = "inset";
         } else {
@@ -153,15 +171,12 @@ window.onload = function () {
         insetCheckbox.classList.toggle('settings-shadow__inset_checked');
         targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
         codeShadow.value = targetShadow.style.cssText;
-
-        console.log(insetText);
     });
 
     codeCopyButtonShadow.addEventListener('click', function (evt) {
         evt.preventDefault();
         codeShadow.select();
         document.execCommand('copy');
-        
     });
 
 }
