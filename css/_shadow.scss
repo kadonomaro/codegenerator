@@ -12,21 +12,21 @@
         margin: 0 -10px;
     }
     &__settings {
-        margin: 10px;
+        margin: 5px;
         width: calc(50% - 20px);
         &::before {
             background: url('../build/img/controls.svg');
         }
     }
     &__preview {
-        margin: 10px;
+        margin: 5px;
         width: calc(50% - 20px);
         &::before {
             background: url('../build/img/preview.svg');
         }
     }
     &__code {
-        margin: 10px;
+        margin: 5px;
         width: calc(50% - 20px);
         &::before {
             background: url('../build/img/file.svg');
