@@ -1,6 +1,7 @@
 var pixel = document.querySelector('.pixel');
 var pixelDrag = document.querySelector('.pixel__head');
 var pixelFile = document.querySelector('.pixel__file');
+var pixelImg = document.querySelector('.pixel__img');
 
 var pixelHeight = pixelDrag.getBoundingClientRect().height;
 var pixelWidth = pixelDrag.getBoundingClientRect().width;
@@ -28,7 +29,8 @@ pixelDrag.addEventListener('mouseup', function () {
 });
 
 pixelFile.addEventListener('change', function () {
-    console.dir(pixelFile);
+    var fileUrl = "easy-pixel/img/" + pixelFile.files[0].name;
+    pixelImg.setAttribute('src',fileUrl)
 });
 
     // var file = document.querySelector('.file');

@@ -16,13 +16,41 @@
     &__body {
         padding: 10px;
     }
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 -5px 10px;
+
+    }
+    &__label {
+        width: 60px;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #909090;
+
+    }
+    &__file {
+        width: 0;
+        height: 0;
+    }
 
     &__images {
+        display: flex;
         width: 100%;
         min-height: 50px;
+        border: 1px solid #909090;
         box-sizing: border-box;
     }
-    &__image {
+    &__img {
         display: block;
+        // width: calc(33.33% - 10px);
+        // height: 50px;
+        width: 128px;
+        height: 128px;
+        margin: 5px;
+        background-color: #aaa;
+        background-size: cover;
+        background-position: center;
+        
     }
 } 
