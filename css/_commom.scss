@@ -34,22 +34,3 @@ html {
     }
 }
 
-.pixel {
-    position: fixed;
-    top: 50px;
-    left: 50px;
-    z-index: 50;
-    
-    background-color: $color-apps;
-    border: 1px solid $color-border;
-    &__head {
-        margin-bottom: 10px;
-        padding: 10px;
-        font-weight: bold;
-        border-bottom: 1px solid $color-border;
-        cursor: move;
-    }
-    &__body {
-        padding: 10px;
-    }
-}

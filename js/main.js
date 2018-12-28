@@ -180,19 +180,3 @@ window.onload = function () {
     });
 
 }
-
-
-
-
-
-
-
-    // var file = document.querySelector('.file');
-    // var borderCode = document.querySelector('.border__code');
-
-    // console.dir(file);
-
-    // file.addEventListener('change', function () {
-    //     borderCode.style.background = `url('${file.files[0].name}')`;
-    //     console.log(`url('${file.webkitRelativePath}')`);
-    // });
