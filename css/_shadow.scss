@@ -9,7 +9,7 @@
     &__main {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -10px;
+        margin: 0 -5px;
     }
     &__settings {
         margin: 5px;
@@ -36,8 +36,9 @@
 
 @include media($tablet) {
     .shadow {
+        padding: 10px;
         &__settings, &__preview, &__code {
-            width: calc(100% - 20px);
+            width: calc(100% - 10px);
         }
     }
 }

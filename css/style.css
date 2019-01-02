@@ -361,7 +361,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 -10px;
+  margin: 0 -5px;
 }
 
 .border__settings {
@@ -392,8 +392,11 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 @media screen and (max-width: 767px) {
+  .border {
+    padding: 10px;
+  }
   .border__settings, .border__preview, .border__code {
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
   }
 }
 
@@ -447,7 +450,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .settings-border__border-style {
   margin: 5px;
-  padding: 5px 10px;
+  padding: 3px 6px;
   font-family: "Roboto Mono", monospace;
   border: 2px solid #909090;
 }
@@ -497,7 +500,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 -10px;
+  margin: 0 -5px;
 }
 
 .shadow__settings {
@@ -528,8 +531,11 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 @media screen and (max-width: 767px) {
+  .shadow {
+    padding: 10px;
+  }
   .shadow__settings, .shadow__preview, .shadow__code {
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
   }
 }
 
@@ -604,7 +610,7 @@ input[type=range]:focus::-ms-fill-upper {
 .preview-shadow__target {
   margin: auto;
   background-color: #ff753f;
-  border: 2px solid #303030;
+  border: 2px solid black;
   width: 200px;
   height: 200px;
 }
@@ -631,7 +637,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 -10px;
+  margin: 0 -5px;
 }
 
 .transition__settings {
@@ -663,10 +669,11 @@ input[type=range]:focus::-ms-fill-upper {
 
 @media screen and (max-width: 767px) {
   .transition {
+    padding: 10px;
     padding-bottom: 100px;
   }
   .transition__settings, .transition__preview, .transition__code {
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
   }
 }
 
@@ -700,7 +707,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .settings-transition__timing {
   margin: 5px;
-  padding: 5px 10px;
+  padding: 3px 6px;
   font-family: "Roboto Mono", monospace;
   border: 2px solid #909090;
 }
