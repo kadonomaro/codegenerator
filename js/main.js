@@ -190,15 +190,15 @@ window.onload = function () {
     var bezierSetTransition = document.querySelector('.settings-transition__bezier-set');
     var bezierTransition = document.querySelector('.settings-transition__bezier');
 
+
+    targetTransition.addEventListener('click', function () {
+        targetTransition.classList.toggle('preview-transition__target_anim_active');
+    });
+
     bezierTransition.addEventListener('input', function () {
         targetTransition.style.transitionTimingFunction = `${timingTransition.value}(${bezierTransition.value})`;
         codeTransition.value = targetTransition.style.cssText;
         codeReplace(codeTransition);
-    });
-
-    targetTransition.addEventListener('click', function () {
-        targetTransition.classList.toggle('preview-transition__target_anim_active');
-        console.dir(targetTransition.style);
     });
 
     durationTransition.addEventListener('input', function () {
@@ -221,9 +221,14 @@ window.onload = function () {
             bezierSetTransition.classList.remove('settings-transition__bezier-set_active');
             targetTransition.style.transitionTimingFunction = timingTransition.value;
         }
-        // targetTransition.style.transitionTimingFunction = timingTransition.value;
         codeTransition.value = targetTransition.style.cssText;
         codeReplace(codeTransition);
+    });
+
+    copyCodeTransition.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        codeTransition.select();
+        document.execCommand('copy');
     });
 
 }
