@@ -131,25 +131,25 @@ window.onload = function () {
 
     shiftXSlider.addEventListener('input', function () {
         shiftXCount.value = shiftXSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
         codeShadow.value = targetShadow.style.cssText;
     });
     
     shiftYSlider.addEventListener('input', function () {
         shiftYCount.value = shiftYSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
         codeShadow.value = targetShadow.style.cssText;
     });
     
     shiftBlurSlider.addEventListener('input', function () {
         shiftBlurCount.value = shiftBlurSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
         codeShadow.value = targetShadow.style.cssText;
     });
 
     shiftSpreadSlider.addEventListener('input', function () {
         shiftSpreadCount.value = shiftSpreadSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
         codeShadow.value = targetShadow.style.cssText;
     });
 
@@ -169,7 +169,7 @@ window.onload = function () {
         }
 
         insetCheckbox.classList.toggle('settings-shadow__inset_checked');
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, 0.5)`;
+        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
         codeShadow.value = targetShadow.style.cssText;
     });
 

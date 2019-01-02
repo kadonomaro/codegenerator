@@ -7,6 +7,19 @@
   border: 1px solid #909090;
 }
 
+.pixel__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid #909090;
+  cursor: pointer;
+}
+
 .pixel__head {
   margin-bottom: 10px;
   padding: 15px 10px;
@@ -60,5 +73,9 @@
   background-color: #aaa;
   background-size: cover;
   background-position: center;
+}
+
+.pixel_hidden {
+  display: none;
 }
 /*# sourceMappingURL=pixel.css.map */

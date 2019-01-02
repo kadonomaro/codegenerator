@@ -2,12 +2,17 @@ var pixel = document.querySelector('.pixel');
 var pixelDrag = document.querySelector('.pixel__head');
 var pixelFile = document.querySelector('.pixel__file');
 var pixelImg = document.querySelector('.pixel__img');
+var pixelClose = document.querySelector('.pixel__close');
 
 var pixelHeight = pixelDrag.getBoundingClientRect().height;
 var pixelWidth = pixelDrag.getBoundingClientRect().width;
 
 var isDrag = false;
 
+pixelClose.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    pixel.classList.add('pixel_hidden');
+});
 
 pixelDrag.addEventListener('mousedown', function () {
     isDrag = true;
