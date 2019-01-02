@@ -24,7 +24,7 @@
         <ul class="nav__list">
             <li class="nav__item"><a href="#border" class="nav__link">Border</a></li>
             <li class="nav__item"><a href="#shadow" class="nav__link">Box-shadow</a></li>
-            <li class="nav__item"><a href="#animation" class="nav__link">Animation</a></li>
+            <li class="nav__item"><a href="#transition" class="nav__link">Transition</a></li>
 
         </ul>
     </nav>
@@ -175,19 +175,46 @@
         </section><!--box shadow-->
 
 
-        <section class="animation" id="animation">
+        <section class="transition" id="transition">
 
-            <h2 class="animation__title">Animation</h2>
+            <h2 class="transition__title">Transition</h2>
 
-            <div class="animation__main">
-                <div class="animation__settings block" tabindex="0">
+            <div class="transition__main">
+                <div class="transition__settings block" tabindex="0">
                     <h3 class="block__title">Settings</h3>
+                    <form action="" class="settings-transition">
+                        <label class="settings-transition__label">
+                            <span class="settings-transition__title">Duration</span>
+                            <input class="settings-transition__duration" type="number" name="duration" value="1" min="0.1" step="0.1">
+                        </label>
+
+                        <label class="settings-transition__label">
+                            <span class="settings-transition__title">Delay</span>
+                            <input class="settings-transition__delay" type="number" name="delay" value="1" min="0.1" step="0.1">
+                        </label>
+
+                        <label class="settings-transition__label">
+                            <span class="settings-transition__title">Timing-function</span>
+                            <select name="timing" class="settings-transition__timing">
+                                <option value="ease">ease</option>
+                                <option value="ease-in">ease-in</option>
+                                <option value="ease-out">ease-out</option>
+                                <option value="ease-in-out">ease-in-out</option>
+                                <option value="linear">linear</option>
+                                <option value="step-start">step-start</option>
+                                <option value="step-end">step-end</option>
+                                <option value="steps">steps</option>
+                                <option value="cubic-bezier">cubic-bezier</option>
+                            </select>
+                        </label>
+                        
+                    </form>
 
                 </div>
-                <div class="animation__preview block" tabindex="0">
+                <div class="transition__preview block" tabindex="0">
                     <h3 class="block__title">Preview</h3>
                 </div>
-                <div class="animation__code block" tabindex="0">
+                <div class="transition__code block" tabindex="0">
                     <h3 class="block__title">Code</h3>
                 </div>
             </div>

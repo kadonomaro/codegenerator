@@ -460,7 +460,7 @@ input[type=range]:focus::-ms-fill-upper {
 .preview-border__target {
   margin: auto;
   background-color: #ff753f;
-  border: 2px solid #303030;
+  border: 2px solid black;
   width: 200px;
   height: 200px;
 }
@@ -604,18 +604,18 @@ input[type=range]:focus::-ms-fill-upper {
   margin-bottom: 10px;
 }
 
-.animation {
+.transition {
   min-height: 100vh;
   padding: 20px;
   background-color: #eaeaea;
 }
 
-.animation__title {
+.transition__title {
   margin-top: 80px;
   margin-bottom: 20px;
 }
 
-.animation__main {
+.transition__main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -624,37 +624,72 @@ input[type=range]:focus::-ms-fill-upper {
   margin: 0 -10px;
 }
 
-.animation__settings {
+.transition__settings {
   margin: 5px;
   width: calc(50% - 20px);
 }
 
-.animation__settings::before {
+.transition__settings::before {
   background: url("../build/img/controls.svg");
 }
 
-.animation__preview {
+.transition__preview {
   margin: 5px;
   width: calc(50% - 20px);
 }
 
-.animation__preview::before {
+.transition__preview::before {
   background: url("../build/img/preview.svg");
 }
 
-.animation__code {
+.transition__code {
   margin: 5px;
   width: calc(50% - 20px);
 }
 
-.animation__code::before {
+.transition__code::before {
   background: url("../build/img/file.svg");
 }
 
 @media screen and (max-width: 767px) {
-  .animation__settings, .animation__preview, .animation__code {
+  .transition__settings, .transition__preview, .transition__code {
     width: calc(100% - 20px);
   }
+}
+
+.settings-transition {
+  margin: 0 -5px;
+}
+
+.settings-transition__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.settings-transition__title {
+  margin-left: 5px;
+}
+
+.settings-transition__duration, .settings-transition__delay {
+  width: 40px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #909090;
+  border-radius: 5px;
+}
+
+.settings-transition__timing {
+  margin: 5px;
+  padding: 5px 10px;
+  font-family: "Roboto Mono", monospace;
+  border: 2px solid #909090;
 }
 
 .footer {

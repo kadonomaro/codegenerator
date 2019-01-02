@@ -1,0 +1,25 @@
+.settings-transition {
+    margin: 0 -5px;
+    &__label {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    &__title {
+        margin-left: 5px;
+    }
+    &__duration, &__delay {
+        width: 40px;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid $color-border;
+        border-radius: 5px;
+    }
+    &__timing {
+        margin: 5px;
+        padding: 5px 10px;
+        font-family: $font-main;
+        border: 2px solid $color-border;
+    };
+}

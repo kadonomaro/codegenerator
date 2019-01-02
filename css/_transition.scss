@@ -1,4 +1,4 @@
-.animation {
+.transition {
     min-height: 100vh;
     padding: 20px;
     background-color: $color-apps;
@@ -35,7 +35,7 @@
 }
 
 @include media($tablet) {
-    .animation {
+    .transition {
         &__settings, &__preview, &__code {
             width: calc(100% - 20px);
         }

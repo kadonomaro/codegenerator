@@ -20,7 +20,10 @@
 @import 'preview-shadow';
 @import 'code-shadow';
 
-@import 'animation';
+@import 'transition';
+@import 'settings-transition';
+@import 'preview-transition';
+@import 'code-transition';
 
 
 @import 'footer';
