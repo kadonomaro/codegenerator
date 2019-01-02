@@ -1,3 +1,23 @@
 .preview-transition {
-    
+    display: flex;
+    height: calc(100% - 40px);
+    padding: 20px 0;
+    box-sizing: border-box;
+    &__target {
+        position: relative;
+        margin: auto 0;
+        background-color: $color-target;
+        border: 2px solid black;
+        width: 80px;
+        height: 80px;
+        transition-property: width;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        transition-timing-function: ease;
+
+    }
+    &__target_anim_active {
+        width: 100%;
+
+    }
 }

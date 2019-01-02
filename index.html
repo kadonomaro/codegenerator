@@ -185,13 +185,14 @@
                     <form action="" class="settings-transition">
                         <label class="settings-transition__label">
                             <span class="settings-transition__title">Duration</span>
-                            <input class="settings-transition__duration" type="number" name="duration" value="1" min="0.1" step="0.1">
+                            <input class="settings-transition__duration" type="number" name="duration" value="1" min="0.1" max="30" step="0.1">
                         </label>
 
                         <label class="settings-transition__label">
                             <span class="settings-transition__title">Delay</span>
-                            <input class="settings-transition__delay" type="number" name="delay" value="1" min="0.1" step="0.1">
+                            <input class="settings-transition__delay" type="number" name="delay" value="0" min="0" step="0.1">
                         </label>
+                        
 
                         <label class="settings-transition__label">
                             <span class="settings-transition__title">Timing-function</span>
@@ -203,23 +204,33 @@
                                 <option value="linear">linear</option>
                                 <option value="step-start">step-start</option>
                                 <option value="step-end">step-end</option>
-                                <option value="steps">steps</option>
                                 <option value="cubic-bezier">cubic-bezier</option>
                             </select>
-                        </label>
-                        
-                    </form>
+                            <fieldset class="settings-transition__bezier-set">
+                                <span class="settings-transition__title">Cubic-bezier</span>
+                                <input type="text" name="bezier" class="settings-transition__bezier" value="0.25,0.1,0.25,1">
+                            </fieldset>
 
+                        </label>
+                    </form>
                 </div>
+
                 <div class="transition__preview block" tabindex="0">
                     <h3 class="block__title">Preview</h3>
+                    <div class="preview-transition">
+                        <div class="preview-transition__target"></div>
+                    </div>
                 </div>
+
                 <div class="transition__code block" tabindex="0">
                     <h3 class="block__title">Code</h3>
+                    <textarea class="code-transition code" name="code-transition" cols="30" rows="8" readonly></textarea>
+                    <button class="code-transition__copy button">Copy</button>
                 </div>
+
             </div>
 
-        </section><!--border-->
+        </section><!--transition-->
 
     </div><!--content-->
 

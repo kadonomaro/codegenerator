@@ -9,7 +9,7 @@
     &__title {
         margin-left: 5px;
     }
-    &__duration, &__delay {
+    &__duration, &__delay, &__bezier {
         width: 40px;
         margin: 5px;
         padding: 5px;
@@ -21,5 +21,18 @@
         padding: 5px 10px;
         font-family: $font-main;
         border: 2px solid $color-border;
-    };
+    }
+    &__bezier-set {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: opacity 0.5s;
+        opacity: 0;
+    }
+    &__bezier-set_active {
+        opacity: 1;
+    }
+    &__bezier {
+        width: 120px;
+    }
 }

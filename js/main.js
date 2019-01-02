@@ -85,7 +85,6 @@ window.onload = function () {
 
     borderWidth.addEventListener('input', function () {
         borderWidthCount.value = borderWidth.value + 'px';
-        // target.style.borderWidth = `${borderWidth.value}px`;
         target.style.border = `${borderWidth.value}px ${borderStyle.value} black`;
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
@@ -177,6 +176,54 @@ window.onload = function () {
         evt.preventDefault();
         codeShadow.select();
         document.execCommand('copy');
+    });
+
+
+    var targetTransition = document.querySelector('.preview-transition__target');
+    var codeTransition = document.querySelector('.code-transition');
+    var copyCodeTransition = document.querySelector('.code-transition__copy');
+
+    var durationTransition = document.querySelector('.settings-transition__duration');
+    var delayTransition = document.querySelector('.settings-transition__delay');
+    var timingTransition = document.querySelector('.settings-transition__timing');
+
+    var bezierSetTransition = document.querySelector('.settings-transition__bezier-set');
+    var bezierTransition = document.querySelector('.settings-transition__bezier');
+
+    bezierTransition.addEventListener('input', function () {
+        targetTransition.style.transitionTimingFunction = `${timingTransition.value}(${bezierTransition.value})`;
+        codeTransition.value = targetTransition.style.cssText;
+        codeReplace(codeTransition);
+    });
+
+    targetTransition.addEventListener('click', function () {
+        targetTransition.classList.toggle('preview-transition__target_anim_active');
+        console.dir(targetTransition.style);
+    });
+
+    durationTransition.addEventListener('input', function () {
+        targetTransition.style.transitionDuration = durationTransition.value + "s";
+        codeTransition.value = targetTransition.style.cssText;
+        codeReplace(codeTransition);
+    });
+
+    delayTransition.addEventListener('input', function () {
+        targetTransition.style.transitionDelay = delayTransition.value + "s";
+        codeTransition.value = targetTransition.style.cssText;
+        codeReplace(codeTransition);
+    });
+
+    timingTransition.addEventListener('change', function () {
+        if (timingTransition.value == 'cubic-bezier') {
+            bezierSetTransition.classList.add('settings-transition__bezier-set_active');
+            targetTransition.style.transitionTimingFunction = `${timingTransition.value}(${bezierTransition.value})`;
+        } else if (timingTransition.value !== 'cubic-bezier') {
+            bezierSetTransition.classList.remove('settings-transition__bezier-set_active');
+            targetTransition.style.transitionTimingFunction = timingTransition.value;
+        }
+        // targetTransition.style.transitionTimingFunction = timingTransition.value;
+        codeTransition.value = targetTransition.style.cssText;
+        codeReplace(codeTransition);
     });
 
 }
