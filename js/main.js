@@ -1,6 +1,9 @@
 window.onload = function () {
     // выделение активного пункта меню
     var navItem = document.querySelectorAll('.nav__item');
+    var border = document.getElementById('border');
+    var shadow = document.getElementById('shadow');
+    var transition = document.getElementById('transition');
 
     navItem.forEach(function (link) {
         link.addEventListener('click', function (evt) {
@@ -14,6 +17,31 @@ window.onload = function () {
             link.classList.add('nav__item_active'); 
         });
     });
+
+
+    
+    window.onscroll = function () {
+        console.log("shadow offset: ",shadow.offsetTop);
+        console.log("window offset: ", window.pageYOffset);
+        if (window.pageYOffset >= border.offsetTop-100) {
+            navItem[0].classList.add('nav__item_active');
+        } else if (window.pageYOffset + 300 < border.offsetTop) {
+            navItem[0].classList.remove('nav__item_active');
+        }
+
+        if (window.pageYOffset >= shadow.offsetTop-100) {
+            navItem[1].classList.add('nav__item_active');
+        } else if (window.pageYOffset + 300 < shadow.offsetTop) {
+            navItem[1].classList.remove('nav__item_active');
+        }
+
+        if (window.pageYOffset >= transition.offsetTop-100) {
+            navItem[2].classList.add('nav__item_active');
+        } else if (window.pageYOffset + 300 < transition.offsetTop) {
+            navItem[2].classList.remove('nav__item_active');
+        }
+    }
+
 
     // открытие/закрытие бокового меню
     var burger = document.querySelector('.header__logo');
@@ -231,4 +259,6 @@ window.onload = function () {
         document.execCommand('copy');
     });
 
+
 }
+
