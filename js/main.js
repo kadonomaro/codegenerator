@@ -1,52 +1,27 @@
-window.onload = function () {
+
+window.addEventListener('load', function () {
     // выделение активного пункта меню
-    var navItem = document.querySelectorAll('.nav__item');
-    var border = document.getElementById('border');
-    var shadow = document.getElementById('shadow');
-    var transition = document.getElementById('transition');
+    let navList = document.querySelector('.nav__list');
+    let content = document.querySelector('.content');
 
-    navItem.forEach(function (link) {
-        link.addEventListener('click', function (evt) {
-            var nav = link.parentNode.children;
-            for (let i = 0; i < nav.length; i++) {
-                if (nav[i].classList.contains('nav__item_active')) {
-                    nav[i].classList.remove('nav__item_active');
+    window.addEventListener('scroll', function () {
+        for (let i = 0; i < content.children.length; i++) {
+            if (window.pageYOffset >= content.children[i].offsetTop) {
+                navList.children[i].classList.add('nav__item_active');
+                if (navList.children[i].previousElementSibling !== null) {
+                    navList.children[i].previousElementSibling.classList.remove('nav__item_active');
                 }
-                
+            } else {
+                navList.children[i].classList.remove('nav__item_active');
             }
-            link.classList.add('nav__item_active'); 
-        });
+        }
     });
-
-
     
-    window.onscroll = function () {
-        console.log("shadow offset: ",shadow.offsetTop);
-        console.log("window offset: ", window.pageYOffset);
-        if (window.pageYOffset >= border.offsetTop-100) {
-            navItem[0].classList.add('nav__item_active');
-        } else if (window.pageYOffset + 300 < border.offsetTop) {
-            navItem[0].classList.remove('nav__item_active');
-        }
-
-        if (window.pageYOffset >= shadow.offsetTop-100) {
-            navItem[1].classList.add('nav__item_active');
-        } else if (window.pageYOffset + 300 < shadow.offsetTop) {
-            navItem[1].classList.remove('nav__item_active');
-        }
-
-        if (window.pageYOffset >= transition.offsetTop-100) {
-            navItem[2].classList.add('nav__item_active');
-        } else if (window.pageYOffset + 300 < transition.offsetTop) {
-            navItem[2].classList.remove('nav__item_active');
-        }
-    }
-
 
     // открытие/закрытие бокового меню
     var burger = document.querySelector('.header__logo');
     var nav = document.querySelector('.nav');
-    var content = document.querySelector('.content');
+
     var footer = document.querySelector('.footer');
 
     burger.addEventListener('click', function () {
@@ -54,6 +29,7 @@ window.onload = function () {
         content.classList.toggle('content_size_full');
         footer.classList.toggle('footer_size_full');
     });
+
 
     // изменения стиля элемента "preview" с помощью range слайдера
     var target = document.querySelector('.preview-border__target');
@@ -75,51 +51,50 @@ window.onload = function () {
     var bottomRightCount = document.querySelector('.settings-border__border-bottom-right-count');
     var borderWidthCount = document.querySelector('.settings-border__border-width-count');
 
-    
     allCorners.addEventListener('input', function () {
         allCount.value = allCorners.value + 'px';
-        target.style.borderRadius = `${allCount.value}`;
+        target.style.borderRadius = '' + allCount.value;
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
 
     topLeftCorner.addEventListener('input', function () {
         topLeftCount.value = topLeftCorner.value + 'px';
-        target.style.borderTopLeftRadius = `${topLeftCount.value}`;
+        target.style.borderTopLeftRadius = '' + topLeftCount.value;
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
 
     topRightCorner.addEventListener('input', function () {
         topRightCount.value = topRightCorner.value + 'px';
-        target.style.borderTopRightRadius = `${topRightCount.value}`;
+        target.style.borderTopRightRadius = '' + topRightCount.value;
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
-    
+
     bottomLeftCorner.addEventListener('input', function () {
         bottomLeftCount.value = bottomLeftCorner.value + 'px';
-        target.style.borderBottomLeftRadius = `${bottomLeftCount.value}`;
+        target.style.borderBottomLeftRadius = '' + bottomLeftCount.value;
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
 
     bottomRightCorner.addEventListener('input', function () {
         bottomRightCount.value = bottomRightCorner.value + 'px';
-        target.style.borderBottomRightRadius = `${bottomRightCount.value}`;
+        target.style.borderBottomRightRadius = '' + bottomRightCount.value;
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
 
     borderWidth.addEventListener('input', function () {
         borderWidthCount.value = borderWidth.value + 'px';
-        target.style.border = `${borderWidth.value}px ${borderStyle.value} black`;
+        target.style.border = borderWidth.value + 'px ' + borderStyle.value + ' black';
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
 
     borderStyle.addEventListener('change', function () {
-        target.style.border = `${borderWidth.value}px ${borderStyle.value} black`;
+        target.style.border = borderWidth.value + 'px ' + borderStyle.value + ' black';
         codeBorder.value = target.style.cssText;
         codeReplace(codeBorder);
     });
@@ -129,18 +104,17 @@ window.onload = function () {
         codeBorder.select();
         document.execCommand('copy');
     });
-   
+
     function codeReplace(string) {
         string.value = string.value.replace(/;\s/g, ";\n");
     }
-
 
     //изменения стиля box-shadow 
     var targetShadow = document.querySelector('.preview-shadow__target');
     var codeShadow = document.querySelector('.code-shadow');
     var codeCopyButtonShadow = document.querySelector('.code-shadow__copy');
     var insetCheckbox = document.querySelector('.settings-shadow__inset');
-    
+
     var inset = false;
     var insetText = "";
 
@@ -149,7 +123,7 @@ window.onload = function () {
     var shiftBlurSlider = document.querySelector('.settings-shadow__blur-slider');
     var shiftSpreadSlider = document.querySelector('.settings-shadow__spread-slider');
     var opacitySlider = document.querySelector('.settings-shadow__opacity-slider');
-    
+
     var shiftXCount = document.querySelector('.settings-shadow__shift-x-count');
     var shiftYCount = document.querySelector('.settings-shadow__shift-y-count');
     var shiftBlurCount = document.querySelector('.settings-shadow__blur-count');
@@ -158,31 +132,31 @@ window.onload = function () {
 
     shiftXSlider.addEventListener('input', function () {
         shiftXCount.value = shiftXSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
+        targetShadow.style.boxShadow = insetText + ' ' + shiftXSlider.value + 'px ' + shiftYSlider.value + 'px ' + shiftBlurSlider.value + 'px ' + shiftSpreadSlider.value + 'px rgba(0, 0, 0, ' + opacitySlider.value + ')';
         codeShadow.value = targetShadow.style.cssText;
     });
-    
+
     shiftYSlider.addEventListener('input', function () {
         shiftYCount.value = shiftYSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
+        targetShadow.style.boxShadow = insetText + ' ' + shiftXSlider.value + 'px ' + shiftYSlider.value + 'px ' + shiftBlurSlider.value + 'px ' + shiftSpreadSlider.value + 'px rgba(0, 0, 0, ' + opacitySlider.value + ')';
         codeShadow.value = targetShadow.style.cssText;
     });
-    
+
     shiftBlurSlider.addEventListener('input', function () {
         shiftBlurCount.value = shiftBlurSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
+        targetShadow.style.boxShadow = insetText + ' ' + shiftXSlider.value + 'px ' + shiftYSlider.value + 'px ' + shiftBlurSlider.value + 'px ' + shiftSpreadSlider.value + 'px rgba(0, 0, 0, ' + opacitySlider.value + ')';
         codeShadow.value = targetShadow.style.cssText;
     });
 
     shiftSpreadSlider.addEventListener('input', function () {
         shiftSpreadCount.value = shiftSpreadSlider.value + "px";
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
+        targetShadow.style.boxShadow = insetText + ' ' + shiftXSlider.value + 'px ' + shiftYSlider.value + 'px ' + shiftBlurSlider.value + 'px ' + shiftSpreadSlider.value + 'px rgba(0, 0, 0, ' + opacitySlider.value + ')';
         codeShadow.value = targetShadow.style.cssText;
     });
 
     opacitySlider.addEventListener('input', function () {
         opacityCount.value = opacitySlider.value;
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
+        targetShadow.style.boxShadow = insetText + ' ' + shiftXSlider.value + 'px ' + shiftYSlider.value + 'px ' + shiftBlurSlider.value + 'px ' + shiftSpreadSlider.value + 'px rgba(0, 0, 0, ' + opacitySlider.value + ')';
         codeShadow.value = targetShadow.style.cssText;
     });
 
@@ -196,7 +170,7 @@ window.onload = function () {
         }
 
         insetCheckbox.classList.toggle('settings-shadow__inset_checked');
-        targetShadow.style.boxShadow = `${insetText} ${shiftXSlider.value}px ${shiftYSlider.value}px ${shiftBlurSlider.value}px ${shiftSpreadSlider.value}px rgba(0, 0, 0, ${opacitySlider.value})`;
+        targetShadow.style.boxShadow = insetText + ' ' + shiftXSlider.value + 'px ' + shiftYSlider.value + 'px ' + shiftBlurSlider.value + 'px ' + shiftSpreadSlider.value + 'px rgba(0, 0, 0, ' + opacitySlider.value + ')';
         codeShadow.value = targetShadow.style.cssText;
     });
 
@@ -205,7 +179,6 @@ window.onload = function () {
         codeShadow.select();
         document.execCommand('copy');
     });
-
 
     var targetTransition = document.querySelector('.preview-transition__target');
     var codeTransition = document.querySelector('.code-transition');
@@ -218,13 +191,12 @@ window.onload = function () {
     var bezierSetTransition = document.querySelector('.settings-transition__bezier-set');
     var bezierTransition = document.querySelector('.settings-transition__bezier');
 
-
     targetTransition.addEventListener('click', function () {
         targetTransition.classList.toggle('preview-transition__target_anim_active');
     });
 
     bezierTransition.addEventListener('input', function () {
-        targetTransition.style.transitionTimingFunction = `${timingTransition.value}(${bezierTransition.value})`;
+        targetTransition.style.transitionTimingFunction = timingTransition.value + '(' + bezierTransition.value + ')';
         codeTransition.value = targetTransition.style.cssText;
         codeReplace(codeTransition);
     });
@@ -244,7 +216,7 @@ window.onload = function () {
     timingTransition.addEventListener('change', function () {
         if (timingTransition.value == 'cubic-bezier') {
             bezierSetTransition.classList.add('settings-transition__bezier-set_active');
-            targetTransition.style.transitionTimingFunction = `${timingTransition.value}(${bezierTransition.value})`;
+            targetTransition.style.transitionTimingFunction = timingTransition.value + '(' + bezierTransition.value + ')';
         } else if (timingTransition.value !== 'cubic-bezier') {
             bezierSetTransition.classList.remove('settings-transition__bezier-set_active');
             targetTransition.style.transitionTimingFunction = timingTransition.value;
@@ -258,7 +230,4 @@ window.onload = function () {
         codeTransition.select();
         document.execCommand('copy');
     });
-
-
-}
-
+});
