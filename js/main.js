@@ -6,12 +6,12 @@ window.addEventListener('load', function () {
 
     window.addEventListener('scroll', function () {
         for (let i = 0; i < content.children.length; i++) {
-            if (window.pageYOffset >= content.children[i].offsetTop) {
+            if (window.pageYOffset >= (content.children[i].offsetTop - 200)) {
                 navList.children[i].classList.add('nav__item_active');
                 if (navList.children[i].previousElementSibling !== null) {
                     navList.children[i].previousElementSibling.classList.remove('nav__item_active');
                 }
-            } else {
+            } else if (navList.children[i].classList.contains('nav__item_active')) {
                 navList.children[i].classList.remove('nav__item_active');
             }
         }
@@ -21,7 +21,6 @@ window.addEventListener('load', function () {
     // открытие/закрытие бокового меню
     var burger = document.querySelector('.header__logo');
     var nav = document.querySelector('.nav');
-
     var footer = document.querySelector('.footer');
 
     burger.addEventListener('click', function () {
